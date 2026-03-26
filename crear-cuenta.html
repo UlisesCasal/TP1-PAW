@@ -2,12 +2,12 @@
 <html lang="es">
 <head>
     <title>
-        inicio-sesion
+        crear-cuenta
     </title> 
     <meta charset="utf-8">
     <meta name="" content="Iniciar sesion">
 
-</head>   
+</head>  
 <body>
     <header>
         <!--el tag "a" es un enlace para navegar hacia otra pagina, mientras que el tag "button" ejecuta una accion dentro de la misma-->
@@ -23,34 +23,41 @@
          <form><!--el tag "form" indica que es un formulario-->
             <input type="text" placeholder="Buscar..."> <!--el tag "input" indica que el usuario debe ingresar algo, en este caso un texto-->
         </form> 
-        <a href="crear-cuenta.html">
-            Registrarse <!--Nombre del boton: "Registrarse"-->
+        <a href="inicio-sesion.html">
+            Iniciar sesion <!--Nombre del boton: "Iniciar sesion"-->
         </a>  
     </header>
     <main>
-        <h2>Inicio de sesion</h2>
+        <h6> Inicio > Mi Cuenta> Crear Cuenta</h6>
+        <h2> Crear cuenta </h2>
+        <h4> Compra mas rapido y lleva el control de tus pedidos, en un solo lugar!</h4>
+        <h6> Nombre y apellido</h6>
+        <form>
+            <input type="text" placeholder="ej.:Maria Perez">
+        </form>
         <h6> Email</h6>
         <form>
-            <input type="text" placeholder="ej.:tunombre@email.com"> 
+            <input type="email" placeholder="ej.:tunombre@email.com">
         </form>
-        <h6> Contraseña </h6>
-        <form>  
-            <input type="password" placeholder="ej.:tucontraseña"> 
-            <a href="recuperar_contraseña.html">
-                ¿Olvidaste tu contraseña?
-            </a>
+        <h6> Telefono (opcional)</h6>
+        <form>
+            <input type="tel" placeholder="ej.:1123445567">
         </form>
+        <h6> Contraseña</h6>
+        <form>
+            <input type="password" placeholder="ej.:tuconstraseña">
+        </form>
+        <h6> Confirmar contraseña</h6>
+        <form>
+            <input type="password" placeholder="ej.:tuconstraseña">
+        </form>
+        <input type="checkbox" id="robot">
+        <label for="robot">No soy un robot</label>
         <h3>
-            <a href="iniciarse.html">
-            INICIAR SESION
-            </a>
+        <a href="crearse.html">
+            CREAR CUENTA
+        </a>
         </h3>
-        <label>
-            ¿No tienes cuenta aun?
-        </label>
-        <a href="crear-cuenta.html">
-            Crear cuenta
-        </a>        
     </main>
     <footer>
         <nav><!--nav quiere decir que los enlaces que se encuentran dentro de este tag con para navegar a otros sitios o a este mismo sitio-->
@@ -117,5 +124,5 @@
             </a>
         </nav>
     </footer>
-</body>
-</html>    
+
+</body> 
