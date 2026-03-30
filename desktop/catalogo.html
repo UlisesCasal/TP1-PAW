@@ -34,7 +34,8 @@
             <form action="orden_catalogo.PHP" method="get"><!--Al servidor le llegan una de esas cuatro opciones con-->
             <!--las siguientes posibilidades:1)orden="az" 2)orden="za" 3)orden="precio-ascendente" o 4)orden="precio-descendente" -->
             <fieldset>
-                <label for="orden">Ordenar</label>
+                <legend>Orden</legend>
+                <label for="orden">Ordenar por:</label>
                 <select id="orden" name="orden">
                     <option value="az">A->Z</option>
                     <option value="za">Z->A</option>
@@ -46,7 +47,7 @@
         </form>
         <form action="filtro_catalogo.PHP" method="get">
             <fieldset>
-                <legend>Filtros:</legend>
+                <legend>Filtros</legend>
                 <label for="autor">Autor</label>
                 <input type="text" id="autor" name="autor" placeholder="ej.:Borges">
 
