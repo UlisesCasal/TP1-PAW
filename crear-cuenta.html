@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>
-        crear-cuenta
-    </title> 
-    <meta charset="utf-8">
+    <title>crear-cuenta</title> 
+    <base href="/" target="_blank">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 </head>  
 <body>
     <header>
@@ -18,8 +16,8 @@
         <form action="busqueda.PHP" method="get">
             <input type="text" name="busqueda" placeholder="Buscar..."> 
         </form> 
-        <a href="crear-cuenta.html">
-            Registrarse
+        <a href="inicio-sesion.html">
+            Iniciar sesion
         </a>  
     </header>
     <main>
@@ -37,13 +35,13 @@
                 <label for="nombre_apellido">Nombre y apellido</label>
                 <label for="email">Email</label>
                 <label for="telefono">Telefono (opcional)</label>
-                <label for="contrasenia">Contrasenia</label>
-                <label for="ccontrasenia">Confirmar contrasenia</label>
+                <label for="contraseña">Contraseña</label>
+                <label for="ccontraseña">Confirmar contraseña</label>
                 <input type="text" id="nombre_apellido" name="nombre_apellido" placeholder="ej.: Maria Perez" required>
                 <input type="email" id="email" name="email" placeholder="ej.:tuemail@email.com" required>
                 <input type="tel" id="telefono" name="telefono" placeholder="ej.:+54 011 11111111">
-                <input type="password" id="contrasenia" name="contrasenia" placeholder="ej.:tucontrasenia" required>
-                <input type="password" id="ccontrasenia" name="contrasenia" placeholder="ej.:tucontrasenia" required>
+                <input type="password" id="contraseña" name="contraseña" placeholder="ej.:tucontraseña" required>
+                <input type="password" id="ccontraseña" name="contraseña" placeholder="ej.:tucontraseña" required>
             </fieldset>
             <button type="submit">Crear cuenta</button>
         </form>
