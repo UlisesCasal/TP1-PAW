@@ -14,45 +14,40 @@
       <a href="#">&#128722;</a>
     </nav>
     <form role="search">
-      <input type="search" placeholder="Ingresa título, ISBN, autor">
+      <input type="search" >
       <button type="submit">&#128269;</button>
     </form>
   </header>
 
   <main>
 
-    <!-- Imagen principal del libro -->
     <figure>
-      <img src="media\tapa_libro.jpg" alt="Tapa del libro" width="300">
+      <img src="libro.jpg" alt="Tapa del libro" >
       <figcaption>Tapa libro</figcaption>
     </figure>
 
-    <!-- Opciones de tapa -->
     <section aria-label="Opciones de tapa">
       <button type="button">Tapa Realista</button>
       <button type="button">Tapa digital</button>
     </section>
 
-    <!-- Datos principales del libro -->
     <section aria-label="Datos del libro">
-      <h2>Titulo</h2>
-      <h3>Autor</h3>
+      <h1>Titulo</h1>
+      <h2>Autor</h2>
       <p><strong>Precio</strong></p>
     </section>
 
-    <!-- Cantidad y compra -->
     <section aria-label="Comprar">
       <form action="#" method="post">
         <label for="cantidad">Cantidad:</label>
         <button type="button" aria-label="Disminuir cantidad">&#8592;</button>
         <input type="number" id="cantidad" name="cantidad"
-               value="1" min="1" max="99">
+               value="1" min="1" max="50">
         <button type="button" aria-label="Aumentar cantidad">&#8594;</button>
         <button type="submit">Comprar</button>
       </form>
     </section>
 
-    <!-- Descripción y ficha técnica -->
     <section aria-label="Descripción del libro">
       <h4>Descripcion</h4>
 
