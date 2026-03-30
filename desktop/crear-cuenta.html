@@ -1,123 +1,95 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>
-        crear-cuenta
-    </title> 
-    <meta charset="utf-8">
+    <title>crear-cuenta</title> 
+    <base href="/" target="_blank">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 </head>  
 <body>
     <header>
-        <!--el tag "a" es un enlace para navegar hacia otra pagina, mientras que el tag "button" ejecuta una accion dentro de la misma-->
-        <a href="index.html"> <!--href hace referencia a donde va el enlace, en este caso a la pagina principal, si es que se llama index.html-->
-            <img src="logo.png" 
-            alt="Logo libreria">
-            <!-- src indica de donde viene el recurso, es decir, la imagen en si-->
-            <!--alt es la alternativa a la imagen, si esta no carga aparece esa foto-->
-        </a>
-        <a href="carrito.html">
-            Carrito<!--Nombre del boton: "Carrito"-->
-        </a>
-         <form><!--el tag "form" indica que es un formulario-->
-            <input type="text" placeholder="Buscar..."> <!--el tag "input" indica que el usuario debe ingresar algo, en este caso un texto-->
-        </form> 
-        <a href="inicio-sesion.html">
-            Iniciar sesion <!--Nombre del boton: "Iniciar sesion"-->
-        </a>  
+        <img src="img/logo.png" alt="logo">
+        <h1>Libreria</h1>
+    
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="libros.html">Libros</a></li>
+                <li><a href="autores.html">Autores</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="login.html">Registro</a></li>
+                <li><a href="carrito.html">Carrito</a></li>
+            </ul>
+            <form action="libros.html" method="get" role="search">
+                <label for="busqueda-libros">Buscar libro:</label>
+                <input type="search" id="busqueda-libros" name="q" placeholder="Título, autor o género">
+                <button type="submit">Buscar</button>
+            </form>
+        </nav>
     </header>
     <main>
-        <h6> Inicio > Mi Cuenta> Crear Cuenta</h6>
-        <h2> Crear cuenta </h2>
-        <h4> Compra mas rapido y lleva el control de tus pedidos, en un solo lugar!</h4>
-        <h6> Nombre y apellido</h6>
-        <form>
-            <input type="text" placeholder="ej.:Maria Perez">
-        </form>
-        <h6> Email</h6>
-        <form>
-            <input type="email" placeholder="ej.:tunombre@email.com">
-        </form>
-        <h6> Telefono (opcional)</h6>
-        <form>
-            <input type="tel" placeholder="ej.:1123445567">
-        </form>
-        <h6> Contraseña</h6>
-        <form>
-            <input type="password" placeholder="ej.:tuconstraseña">
-        </form>
-        <h6> Confirmar contraseña</h6>
-        <form>
-            <input type="password" placeholder="ej.:tuconstraseña">
-        </form>
-        <input type="checkbox" id="robot">
-        <label for="robot">No soy un robot</label>
-        <h3>
-        <a href="crearse.html">
-            CREAR CUENTA
-        </a>
-        </h3>
-    </main>
-    <footer>
-        <nav><!--nav quiere decir que los enlaces que se encuentran dentro de este tag con para navegar a otros sitios o a este mismo sitio-->
-            <h4>Redes sociales</h4>
-            <h6>
-            <a href="https://www.instagram.com/dueño_libreria">
-                <img src="logoIG.png"
-                alt="INSTAGRAM">
-            </a>
-            </h6>
-            <h6>
-            <a href="https://www.facebook.com/">
-                <img src="logoFACEBOOK.png"
-                alt="FACEBOOK">
-            </a>
-            </h6>
-            <h6>
-            <a href="https://www.x.com/">
-                <img src="logoX.png"
-                alt="X">
-            </a>
-            </h6>
-        </nav>
         <nav>
-            <h4>PawPrint</h4>
-            <h6><a href="nosotros.html">
-                Nosotros
-            </a>
-            </h6>
-            <h6>
-            <a href="sucursales.html">
-                Sucursales
-            </a>
-            </h6>
-            <h6>
-            <a href="contacto.html">
-                Contacto
-            </a>
-            </h6>
-            <h6>
-            <a href="ayuda.html">
-                Ayuda
-            </a>
+            <ol>
+                <li><a  href="index.html">Inicio</a></li>
+                <li aria-current="page"> Crear cuenta</li><!--Aria-current="page" le dice al browser que es la pagina actual-->
+            </ol>
         </nav>
-        
-        <h4>Atencion al cliente</h4>
-        <h6>
-            <address>
-                <h3>
-                    Tel: +54 0 11 5555-5555
-                </h3>
-                <h3>
-                    Email: atencion@pawprint.com
-                </h3>
-                <h3>
-                    Direccion: Calle falsa 123
-                </h3>
-            </address>
-        </h6>
-    </footer>
+        <h1>Crea cuenta</h1>
+        <p>Compra mas rapido y lleva el control de tus pedidos, ¡en un solo lugar!</p>    
+        <form action="crea_cuenta.PHP" method="post">
+            <fieldset>
+            <legend>Datos personales:</legend>
+                <label for="nombre_apellido">Nombre y apellido</label>
+                <label for="email">Email</label>
+                <label for="telefono">Telefono (opcional)</label>
+                <label for="contraseña">Contraseña</label>
+                <label for="ccontraseña">Confirmar contraseña</label>
+                <input type="text" id="nombre_apellido" name="nombre_apellido" placeholder="ej.: Maria Perez" required>
+                <input type="email" id="email" name="email" placeholder="ej.:tuemail@email.com" required>
+                <input type="tel" id="telefono" name="telefono" placeholder="ej.:+54 011 11111111">
+                <input type="password" id="contraseña" name="contraseña" placeholder="ej.:tucontraseña" required>
+                <input type="password" id="ccontraseña" name="contraseña" placeholder="ej.:tucontraseña" required>
+            </fieldset>
+            <button type="submit">Crear cuenta</button>
+        </form>
+    </main>
+        <footer>
+            <section aria-label="Redes sociales">
+                <h2>Seguinos</h2>
+                <ul>
+                    <li><a href="https://www.instagram.com/tu_usuario" target="_blank"
+                            rel="noopener noreferrer">Instagram</a></li>
+                    <li><a href="https://www.twitter.com/tu_usuario" target="_blank"
+                            rel="noopener noreferrer">Twitter</a></li>
+                    <li><a href="https://www.facebook.com/tu_usuario" target="_blank"
+                            rel="noopener noreferrer">Facebook</a></li>
+                </ul>
+            </section>
+
+            <nav aria-label="Enlaces del sitio">
+                <h2>Paw Print</h2>
+                <ul>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="sucursales.html">Sucursales</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="help.html">Ayuda</a></li>
+                </ul>
+            </nav>
+
+            <section>
+                <h2>Atención al cliente</h2>
+                <address>
+                    +54 9 11 5555-5555<br>
+                    <a href="mailto:atencion@pawprint.com">atencion@pawprint.com</a><br>
+                    Calle Falsa 123
+                </address>
+            </section>
+
+            <section aria-label="Información legal">
+                <img src="img/logo.png" alt="Data fiscal">
+                <p><small>© 2026 Paw Print. Todos los derechos reservados.</small></p>
+            </section>
+        </footer>
 
 </body> 
 </html>

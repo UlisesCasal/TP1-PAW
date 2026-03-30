@@ -7,17 +7,26 @@
 </head>
 <body>
 
-  <header>
-    <nav>
-      <a href="#">&#9776;</a>
-      <h1>PAWPrints</h1>
-      <a href="#">&#128722;</a>
-    </nav>
-    <form role="search">
-      <input type="search" >
-      <button type="submit">&#128269;</button>
-    </form>
-  </header>
+    <header>
+        <img src="img/logo.png" alt="logo">
+        <h1>Libreria</h1>
+    
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="libros.html">Libros</a></li>
+                <li><a href="autores.html">Autores</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="login.html">Registro</a></li>
+                <li><a href="carrito.html">Carrito</a></li>
+            </ul>
+            <form action="libros.html" method="get" role="search">
+                <label for="busqueda-libros">Buscar libro:</label>
+                <input type="search" id="busqueda-libros" name="q" placeholder="Título, autor o género">
+                <button type="submit">Buscar</button>
+            </form>
+        </nav>
+    </header>
 
   <main>
 
