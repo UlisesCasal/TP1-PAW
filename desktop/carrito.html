@@ -2,16 +2,15 @@
 <html lang="es">
 
 <head>
-    <title>carrito</title>
-    <base href="/" target="_blank">
-    <!--Con target="_blank" hace que cualquier referencia se abra en una pestania nueva-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Carrito — Libreria</title>
 </head>
 
 <body>
     <header>
-        <img src="img/logo.png" alt="logo">
+        <img src="media/PAWPrintsLOGO.svg" alt="logo">
         <h1>Libreria</h1>
 
         <nav>
@@ -20,116 +19,106 @@
                 <li><a href="libros.html">Libros</a></li>
                 <li><a href="autores.html">Autores</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="login.html">Registro</a></li>
-                <li><a href="carrito.html">Carrito</a></li>
             </ul>
+            <form action="libros.html" method="get" role="search">
+                <label for="busqueda-libros">Buscar libro:</label>
+                <input type="search" id="busqueda-libros" name="q" placeholder="Título, autor o género">
+                <button type="submit">Buscar</button>
+            </form>
+            <div class="nav-acciones">
+                <a href="login.html">Registro</a>
+                <a href="carrito.html">Carrito</a>
+            </div>
         </nav>
     </header>
-    <input type="search" id="busqueda-libros" name="q" placeholder="Título, autor o género">
-    <button type="submit">Buscar</button>
-    </form>
-    </nav>
-    </header>
+
     <main>
-        <h1>Carrito de compras</h1>
-        <form action="analizar_carrito.PHP">
-            <!--La idea de este form es tener dentro del fieldset una lista con todos los libros seleccionados-->
-            <!--por el usuario y fuera dos secciones, una que tiene el boton actualizar carrito que haria un submit y otra que seria finalizar compra que tambien es un submit con informacion de pago incluida-->
-            <!--dentro de cada elemento del fieldset hay un submit para el logo de la basura, que elimina un libro del carrito-->
-            <!--todos los submit van a "analizar_carrito.PHP" donde el servidor utilizara el valor de los inputs mediante el atributo name para-->
-            <!--realizar alguna accion segun lo que corresponda-->
-            <fieldset>
+        <h2>Carrito de compras</h2>
+        <form action="analizar_carrito.PHP" class="carrito-form">
+            <fieldset class="carrito-items">
                 <legend>Libros seleccionados:</legend>
-                <ul><!--La cantidad de elementos de la lista es aleatoria ya que no sabemos cuantos productos va a tener en el carrito el usuario, por lo menos en esta etapa donde solo estamos haciendo html-->
-                    <li>
-                        <p>Titulo+autor</p>
-                        <p>$0</p>
-                        <img src="logo_libro.png" alt="">
+                <ul>
+                    <li class="carrito-item">
+                        <img src="logo_libro.png" alt="Portada libro">
+                        <p class="item-titulo">Titulo + autor</p>
+                        <p class="item-precio">$0</p>
                         <input type="number" name="cantidad_libro" min="1" value="1">
-                        <button type="submit">
+                        <button type="submit" class="btn-borrar" name="accion" value="borrar">
                             <img src="basura.png" alt="Borrar producto del carrito">
                         </button>
                     </li>
-                    <li>
-                        <p>Titulo+autor</p>
-                        <p>$0</p>
-                        <img src="logo_libro.png" alt="">
+                    <li class="carrito-item">
+                        <img src="logo_libro.png" alt="Portada libro">
+                        <p class="item-titulo">Titulo + autor</p>
+                        <p class="item-precio">$0</p>
                         <input type="number" name="cantidad_libro" min="1" value="1">
-                        <button type="submit">
+                        <button type="submit" class="btn-borrar" name="accion" value="borrar">
                             <img src="basura.png" alt="Borrar producto del carrito">
                         </button>
                     </li>
-                    <li>
-                        <p>Titulo+autor</p>
-                        <p>$0</p>
-                        <img src="logo_libro.png" alt="">
+                    <li class="carrito-item">
+                        <img src="logo_libro.png" alt="Portada libro">
+                        <p class="item-titulo">Titulo + autor</p>
+                        <p class="item-precio">$0</p>
                         <input type="number" name="cantidad_libro" min="1" value="1">
-                        <button type="submit">
+                        <button type="submit" class="btn-borrar" name="accion" value="borrar">
                             <img src="basura.png" alt="Borrar producto del carrito">
                         </button>
                     </li>
                 </ul>
             </fieldset>
-            <button type="submit">Actualizar carrito</button>
-            <section>
+
+            <button type="submit" class="btn-actualizar" name="accion" value="actualizar">
+                Actualizar carrito
+            </button>
+
+            <section class="resumen-compra">
                 <h2>Resumen de compra</h2>
                 <ul>
-                    <li>
-                        <p>Subtotal: $0</p>
-                    </li>
-                    <li>
-                        <p>Envio: $0</p>
-                    </li>
-                    <li>
-                        <p>Total: $0</p>
-                    </li>
+                    <li><p>Subtotal: $0</p></li>
+                    <li><p>Envío: $0</p></li>
+                    <li><p>Total: $0</p></li>
                 </ul>
                 <p>Fecha de entrega estimada: 06/04/2006</p>
-                <button type="submit">Finalizar compra</button>
+                <button type="submit" name="accion" value="finalizar">Finalizar compra</button>
             </section>
         </form>
     </main>
-        <footer>
-            <section aria-label="Redes sociales">
-                <h2>Seguinos</h2>
-                <ul>
-                    <li><a href="https://www.instagram.com/tu_usuario" target="_blank"
-                            rel="noopener noreferrer">Instagram</a></li>
-                    <li><a href="https://www.twitter.com/tu_usuario" target="_blank"
-                            rel="noopener noreferrer">Twitter</a></li>
-                    <li><a href="https://www.facebook.com/tu_usuario" target="_blank"
-                            rel="noopener noreferrer">Facebook</a></li>
-                </ul>
-            </section>
 
-            <nav aria-label="Enlaces del sitio">
-                <h2>Paw Print</h2>
-                <ul>
-                    <li><a href="nosotros.html">Nosotros</a></li>
-                    <li><a href="sucursales.html">Sucursales</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                    <li><a href="help.html">Ayuda</a></li>
-                </ul>
-            </nav>
+    <footer>
+        <section aria-label="Redes sociales">
+            <h2>Seguinos</h2>
+            <ul>
+                <li><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                <li><a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+                <li><a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+            </ul>
+        </section>
 
-            <section>
-                <h2>Atención al cliente</h2>
-                <address>
-                    +54 9 11 5555-5555<br>
-                    <a href="mailto:atencion@pawprint.com">atencion@pawprint.com</a><br>
-                    Calle Falsa 123
-                </address>
-            </section>
+        <nav aria-label="Enlaces del sitio">
+            <h2>Paw Print</h2>
+            <ul>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="sucursales.html">Sucursales</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="help.html">Ayuda</a></li>
+            </ul>
+        </nav>
 
-            <section aria-label="Información legal">
-                <img src="img/logo.png" alt="Data fiscal">
-                <p><small>© 2026 Paw Print. Todos los derechos reservados.</small></p>
-            </section>
-        </footer>
+        <section>
+            <h2>Atención al cliente</h2>
+            <address>
+                +54 9 11 5555-5555<br>
+                <a href="mailto:atencion@pawprint.com">atencion@pawprint.com</a><br>
+                Calle Falsa 123
+            </address>
+        </section>
+
+        <section aria-label="Información legal">
+            <img src="img/logo.png" alt="Data fiscal">
+            <p><small>© 2026 Paw Print. Todos los derechos reservados.</small></p>
+        </section>
+    </footer>
+
 </body>
-
-
-
-
-
 </html>
