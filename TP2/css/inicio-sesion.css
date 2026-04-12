@@ -53,6 +53,9 @@ body {
     color: var(--color-texto);
     background-color: var(--color-fondo);
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 a {
@@ -77,7 +80,6 @@ body > header > img { display: none; }
 body > header > h1  { display: none; }
 
 /* ─── NAV ─── */
-
 body > header nav {
     display: flex;
     align-items: center;
@@ -182,235 +184,97 @@ body > header nav form button:hover {
 
 /* ─── MAIN ─── */
 main {
+    flex: 1;
     max-width: var(--max-ancho);
     margin: 0 auto;
-    padding: 1.5rem;
-}
-
-/* ─── BANNER ─── */
-main > picture {
-    display: block;
+    padding: 2rem 1.5rem;
     width: 100%;
-    border-radius: var(--radio);
-    overflow: hidden;
-    margin-bottom: 2.5rem;
-    box-shadow: var(--sombra);
-    aspect-ratio: 16/5;
-    background: var(--color-suave);
 }
 
-main > picture img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* ─── SECCIONES GENERALES ─── */
-main > section {
-    margin-bottom: 3rem;
-}
-
-main > section > header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.25rem;
-}
-
-main > section > header h2 {
+main > h1 {
     font-family: var(--fuente-titulo);
-    font-size: 1.2rem;
-    text-transform: uppercase;
+    font-size: 2rem;
     color: var(--color-primario);
-    font-weight: 600;
-    white-space: nowrap;
+    margin-bottom: 2rem;
+    text-align: center;
 }
 
-/* ─── GRILLA DE 3 COLUMNAS ─── */
-main > section {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-}
-
-main > section > header {
-    grid-column: 1 / -1;
-}
-
-@media (min-width: 600px) {
-    main > section {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* ─── ARTÍCULOS / CARDS ─── */
-main > section > article {
-    background: var(--color-fondo);
-    border: 1px solid var(--color-borde);
-    border-radius: var(--radio);
-    overflow: hidden;
-    box-shadow: var(--sombra);
-    transition: transform var(--transicion), box-shadow var(--transicion);
-    display: flex;
-    flex-direction: column;
-    min-height: 500px;
-}
-
-main > section > article:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 28px rgba(27,142,166,.18);
-}
-
-/* ─── SECCIÓN CATEGORÍAS — Círculos con imagen ─── */
-.seccion-circulos {
-    grid-template-columns: repeat(auto-fit, 150px);
-    justify-content: center;
-    gap: 1rem;
-}
-
-.seccion-circulos > article {
-    position: relative;
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    min-height: 150px; /* Asegurar altura mínima */
-    flex-shrink: 0;   /* Evitar que se encojan en flex containers */
-    overflow: hidden;
-    border: none;
-    background: transparent;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, .30);
-    cursor: pointer;
+/* ─── FORMULARIO DE INICIO DE SESIÓN ─── */
+main > form {
+    max-width: 400px;
     margin: 0 auto;
-    transition: transform var(--transicion), box-shadow var(--transicion);
+    background: var(--color-suave);
+    padding: 2rem;
+    border-radius: var(--radio);
+    border: 1px solid var(--color-borde);
+    box-shadow: var(--sombra);
 }
 
-.seccion-circulos > article:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, .40);
+main > form fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
 }
 
-/* Overlay oscuro para que el texto sea legible */
-.seccion-circulos > article::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, .45);
-    border-radius: 50%;
-    z-index: 1;
-    transition: background var(--transicion);
-}
-
-.seccion-circulos > article:hover::after {
-    background: rgba(0, 0, 0, .25);
-}
-
-/* Nombre de categoría — centrado sobre el overlay */
-.seccion-circulos > article h3 {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-    color: #fff;
+main > form legend {
     font-family: var(--fuente-titulo);
     font-size: 1.1rem;
-    font-weight: 700;
-    text-align: center;
-    text-transform: capitalize;
-    letter-spacing: .1em;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, .6);
-    padding: 0;
-}
-
-/* Figure e imagen llenan el círculo */
-.seccion-circulos > article figure {
-    position: absolute;
-    inset: 0;
-    display: block;
-}
-
-.seccion-circulos > article figure picture {
-    display: block;
-    width: 100%;
-    height: 100%;
-    aspect-ratio: unset;
-    background: none;
-    overflow: hidden;
-}
-
-.seccion-circulos > article figure picture img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform .5s ease;
-}
-
-.seccion-circulos > article:hover figure picture img {
-    transform: scale(1.1);
-}
-
-main > section > article h3 {
-    font-family: var(--fuente-titulo);
-    font-size: .82rem;
-    letter-spacing: .05em;
-    text-transform: capitalize;
-    padding: .75rem 1rem .35rem;
-    color: var(--color-texto);
-}
-
-main > section > article p {
-    font-size: .82rem;
-    padding: 0 1rem .85rem;
-    color: #555;
-    line-height: 1.5;
-}
-
-/* ─── FIGURE / IMAGEN ─── */
-article figure {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-article figure picture {
-    overflow: hidden;
-    background: var(--color-suave);
-    flex: 1;
-}
-
-article figure picture img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform .4s ease;
-}
-
-article:hover figure picture img {
-    transform: scale(1.04);
-}
-
-article figure footer {
-    padding: .65rem 1rem;
-    border-top: 1px solid var(--color-borde);
-    background: var(--color-suave);
-    margin-top: auto;
-}
-
-article figure footer p a {
-    display: inline-block;
-    background: var(--color-primario);
-    color: #fff;
-    font-family: var(--fuente-titulo);
-    font-size: .68rem;
-    letter-spacing: .06em;
+    color: var(--color-primario);
+    margin-bottom: 1rem;
+    font-weight: 600;
     text-transform: uppercase;
-    padding: .35rem .85rem;
-    border-radius: var(--radio);
 }
 
-article figure footer p a:hover {
-    background: var(--color-acento);
+main > form label {
+    display: block;
+    font-family: var(--fuente-titulo);
+    font-weight: 600;
+    color: var(--color-texto);
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+}
+
+main > form label:first-of-type {
+    margin-top: 0;
+}
+
+main > form input[type="email"],
+main > form input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid var(--color-borde);
+    border-radius: var(--radio);
+    font-family: var(--fuente-cuerpo);
+    font-size: 1rem;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+    transition: border-color var(--transicion);
+}
+
+main > form input[type="email"]:focus,
+main > form input[type="password"]:focus {
+    outline: none;
+    border-color: var(--color-primario);
+    background-color: var(--color-blanco);
+}
+
+main > form button {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 1.5rem;
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    border: none;
+    border-radius: var(--radio);
+    font-family: var(--fuente-titulo);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color var(--transicion);
+}
+
+main > form button:hover {
+    background-color: var(--color-acento);
 }
 
 /* ─── FOOTER ─── */
@@ -420,6 +284,8 @@ body > footer {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    margin-top: auto;
+    color: var(--color-blanco);
 }
 
 @media (min-width: 600px) {
@@ -442,14 +308,25 @@ body > footer h2 {
 
 body > footer ul li {
     margin-bottom: .35rem;
+    list-style: none;
+}
+
+body > footer ul {
+    padding: 0;
+    margin: 0;
 }
 
 body > footer ul li a,
-body > footer address a {
+body > footer address {
     font-size: .82rem;
     color: rgba(255, 255, 255, .85);
     font-weight: 300;
     transition: color var(--transicion);
+    font-style: normal;
+}
+
+body > footer address a {
+    color: inherit;
 }
 
 body > footer ul li a:hover,
@@ -457,28 +334,120 @@ body > footer address a:hover {
     color: #fff;
 }
 
+body > footer section[aria-label="Información legal"] img {
+    max-width: 80px;
+    margin-bottom: 0.5rem;
+}
+
+body > footer section[aria-label="Información legal"] p {
+    font-size: 0.75rem;
+    opacity: 0.8;
+}
+
+body > footer h2 {
+    font-family: var(--fuente-titulo);
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+}
+
+body > footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+body > footer ul li {
+    margin-bottom: 0.5rem;
+}
+
+body > footer ul li a {
+    color: var(--color-blanco);
+    transition: color var(--transicion);
+}
+
+body > footer ul li a:hover {
+    color: var(--color-amarillo);
+}
+
 body > footer address {
-    font-weight: 300;
     font-style: normal;
-    font-size: .82rem;
-    color: rgba(255, 255, 255, .85);
     line-height: 1.8;
 }
 
-/* Última columna – logo + copyright */
-body > footer > section:last-child {
-    font-weight: 300;
+body > footer address a {
+    color: var(--color-blanco);
+}
+
+body > footer address a:hover {
+    color: var(--color-amarillo);
+}
+
+body > footer section[aria-label="Información legal"] {
+    text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: .5rem;
+    align-items: center;
+    gap: 1rem;
 }
 
-body > footer > section:last-child img {
-    width: 60px;
+body > footer section[aria-label="Información legal"] img {
+    max-width: 80px;
+    display: none;
 }
 
-body > footer > section:last-child small {
-    font-size: .7rem;
-    color: rgba(255, 255, 255, .45);
+body > footer section[aria-label="Información legal"] p {
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+    body > header nav {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    body > header nav ul {
+        flex: initial;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-acciones {
+        margin-left: 0;
+        justify-content: center;
+        width: 100%;
+    }
+
+    body > header nav form {
+        width: 100%;
+    }
+
+    body > header nav form input[type="search"] {
+        width: 100%;
+    }
+
+    main > form {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    body > header nav form label {
+        display: none;
+    }
+
+    body > header nav form input[type="search"] {
+        width: auto;
+    }
+
+    main > form {
+        padding: 1.5rem;
+    }
+
+    body > footer > section,
+    body > footer > nav {
+        padding: 0.75rem 0;
+        margin-bottom: 1rem;
+    }
 }
