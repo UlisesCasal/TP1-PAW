@@ -74,10 +74,27 @@ body > header {
     background-color: var(--color-violeta);
     border-bottom: 3px solid var(--color-primario);
     box-shadow: var(--sombra);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
-body > header > img { display: none; }
-body > header > h1  { display: none; }
+body > header > img {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    body > header > img {
+        display: block;
+        width: 150px;
+        height: 45px;
+        object-fit: contain;
+        padding: 0 0 0 1.5rem;
+        flex-shrink: 0;
+    }
+}
+
+body > header > h1 { display: none; }
 
 /* ─── NAV ─── */
 body > header nav {
@@ -191,7 +208,7 @@ main {
     width: 100%;
 }
 
-main > h1 {
+main > h2 {
     font-family: var(--fuente-titulo);
     font-size: 2rem;
     color: var(--color-primario);

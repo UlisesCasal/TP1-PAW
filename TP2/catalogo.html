@@ -8,28 +8,29 @@
     <title>catalogo</title>
 </head>
 <body>
-    <header>
-        <img src="img/logo.png" alt="logo">
-        <h2>Libreria</h2>
-    
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="libros.html">Libros</a></li>
-                <li><a href="autores.html">Autores</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="login.html">Registro</a></li>
-                <li><a href="carrito.html">Carrito</a></li>
-            </ul>
-            <form action="libros.html" method="get" role="search">
-                <label for="busqueda-libros">Buscar libro:</label>
-                <input type="search" id="busqueda-libros" name="q" placeholder="Título, autor o género">
-                <button type="submit">Buscar</button>
-            </form>
-        </nav>
-    </header>
+<header>
+    <img src="Logo_Violeta2.JPG" alt="Logo Violeta">
+    <h1>Libreria</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="libros.html">Libros</a></li>
+            <li><a href="autores.html">Autores</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <form action="libros.html" method="get" role="search">
+            <label for="busqueda-libros">Buscar libro:</label>
+            <input type="search" id="busqueda-libros" name="q" placeholder="Título, autor o género">
+            <button type="submit">Buscar</button>
+        </form>
+        <div class="nav-acciones">
+            <a href="login.html">Registro</a>
+            <a href="carrito.html">Carrito</a>
+        </div>
+    </nav>
+</header>
     <main>
-        <h1>Catalogo</h1>
+        <h2>Catalogo</h2>
         <section>
             <h2>Filtro y orden de catalogo</h2>
             <form action="orden_catalogo.PHP" method="get"><!--Al servidor le llegan una de esas cuatro opciones con-->

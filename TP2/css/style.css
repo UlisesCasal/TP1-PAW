@@ -71,9 +71,28 @@ body > header {
     background-color: var(--color-violeta);
     border-bottom: 3px solid var(--color-primario);
     box-shadow: var(--sombra);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
-body > header > img { display: none; }
+/* Logo oculto en mobile — evita colisión con el nav */
+body > header > img {
+    display: none;
+}
+
+/* Logo visible solo en desktop */
+@media (min-width: 768px) {
+    body > header > img {
+        display: block;
+        width: 150px;
+        height: 45px;
+        object-fit: contain;
+        padding: 0 0 0 1.5rem;
+        flex-shrink: 0;
+    }
+}
+
 body > header > h1  { display: none; }
 
 /* ─── NAV ─── */
@@ -162,6 +181,12 @@ body > header nav form input[type="search"] {
     color: var(--color-texto);
     opacity: 0.5;
     width: 220px;
+}
+
+@media (max-width: 600px) {
+    body > header nav form input[type="search"] {
+        width: 100px;
+    }
 }
 
 body > header nav form button {
@@ -485,12 +510,55 @@ body > footer > section:last-child small {
 
 /* ─── Modo Impresión ─── */
 @media print {
+    /* Cambiar variable de transición a 0s */
+    :root {
+        --transicion: 0s;
+    }
+
     /* Forzar fondo blanco y texto negro en todo el documento */
     * {
         background: transparent !important;
         color: #000 !important;
         box-shadow: none !important;
         text-shadow: none !important;
+        transition: none !important;
+        animation: none !important;
+        transform: none !important;
+    }
+
+    /* Deshabilitar transformaciones específicas */
+    .seccion-circulos > article,
+    .seccion-circulos > article::after,
+    .seccion-circulos > article figure picture img,
+    article figure picture img,
+    main > section > article {
+        transition: none !important;
+        transform: none !important;
+    }
+
+    main > section > article:hover {
+        transform: none !important;
+    }
+
+    .seccion-circulos > article:hover {
+        transform: none !important;
+    }
+
+    article:hover figure picture img {
+        transform: none !important;
+    }
+
+    .seccion-circulos > article:hover figure picture img {
+        transform: none !important;
+    }
+
+    /* Mantener colores fijos en categorías y autores - sin cambios de hover */
+    .seccion-circulos > article::after {
+        background: rgba(0, 0, 0, .45) !important;
+    }
+
+    .seccion-circulos > article:hover::after {
+        background: rgba(0, 0, 0, .45) !important;
     }
 
     body {

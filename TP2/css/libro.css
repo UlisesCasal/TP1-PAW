@@ -101,7 +101,7 @@ main > section[aria-label="Datos del libro"] {
     margin-top: -0.1rem;
 }
 
-main > section[aria-label="Datos del libro"] h1 {
+main > section[aria-label="Datos del libro"] h2 {
     font-size: 2rem;
     font-weight: 600;
 
@@ -109,7 +109,7 @@ main > section[aria-label="Datos del libro"] h1 {
     margin: 0;
 }
 
-main > section[aria-label="Datos del libro"] h2 {
+main > section[aria-label="Datos del libro"] h3 {
     margin: 0.3rem 0 0;
     width: fit-content;
     font-size: 0.9rem;
